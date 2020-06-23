@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+go.sum
+tianzhuo-manage
+tianzhuo-manage.iml
+/static
+/test/data_fix_test.go
+/test/mac_test.go
+/task/task
+/util/task/x5_conf_cache_test.go
+log/
+netutil/

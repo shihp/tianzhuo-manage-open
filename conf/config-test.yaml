@@ -1,0 +1,46 @@
+env: dev
+service: tianzhuo-manage-test
+runmode: debug                 # 开发模式, debug, release, test
+addr: :7081                  # HTTP绑定端口
+name: apiserver              # API Server的名字
+#url: http://127.0.0.1:8080   # pingServer函数请求的API服务器的ip:port
+domain: https://localhost
+max_ping_count: 10           # pingServer函数try的次数
+jwt_secret: Rtg8BPKNEf2mB4mgvKONGPZZQSaJWNLijxR42qRgq0iBb5
+#go run $GOROOT/src/crypto/tls/generate_cert.go --host=localhost
+tls:
+  addr: :7081
+  cert: conf/cert.pem
+  key: conf/key.pem
+log:
+  writers: stdout
+  logger_level: DEBUG
+  logger_file: log/apiserver-test.log
+  log_format_text: true
+  rollingPolicy: size
+  log_rotate_date: 1
+  log_rotate_size: 1
+  log_backup_count: 7
+db:
+  name: tz_ad
+  addr: 127.0.0.1:3306
+  username: admin
+  password: pwdUser0xds
+
+mongo:
+  ip: 127.0.0.1
+  port: 27017
+
+redis:
+  ip: 127.0.0.1
+  port: 6379
+  db: 2
+  password: "tz2020"
+docker_db:
+  name: tz_ad
+  addr: 127.0.0.1:3306
+  username: admin
+  password: pwdUser0xds
+
+url:
+  income: https://test0327.tianzhuobj.com/in/upstream/import_income
